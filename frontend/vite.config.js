@@ -14,6 +14,7 @@ export default defineConfig({
         // rewrite: path => path.replace(/^\/api/, '/api') // not needed, keep same path
       }
     }
-  }
+  },
+  
   base: '/emsfront/',
 })
