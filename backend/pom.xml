@@ -17,6 +17,9 @@
     <name>ems</name>
     <description>Demo project for Spring Boot</description>
 
+    <!-- IMPORTANT: make the project produce a WAR -->
+    <packaging>war</packaging>
+
     <properties>
         <!-- Set Java version to 21 -->
         <java.version>21</java.version>
@@ -63,10 +66,17 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <!-- Mark embedded Tomcat as provided so the WAR uses the external container -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>
-	<finalName>emsback</finalName>
+        <finalName>emsback</finalName>
         <plugins>
             <!-- Ensure sources are compiled for the configured java.version -->
             <plugin>
